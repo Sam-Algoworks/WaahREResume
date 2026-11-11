@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/waahliquidglassmotion.ts","./src/api.ts","./src/main.tsx","./src/components/candidatereview.tsx","./src/components/jdfileupload.tsx","./src/components/resumeparserpage.tsx","./src/components/scorerecommendations.tsx","./src/components/talentlibrary.tsx","./src/utils/resumeexport.ts","./vite.config.ts"],"version":"5.9.3"}

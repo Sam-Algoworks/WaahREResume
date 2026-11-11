@@ -1,0 +1,185 @@
+/* RoleFit AI: isolated A4 print profile + compact categorized skills.
+   This stylesheet does not change the on-screen editable skill chips. */
+#rolefit-print-host { display: none; }
+
+@media print {
+  @page { size: A4 portrait; margin: 13mm 16mm 14mm; }
+  html, body { height: auto !important; min-height: 0 !important;
+    overflow: visible !important; background: #fff !important; }
+  body > #root { display: none !important; }
+  body > #rolefit-print-host {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  #rolefit-print-host, #rolefit-print-host * {
+    visibility: visible !important;
+    box-sizing: border-box !important;
+  }
+  #rolefit-print-host .studio-static {
+    position: static !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 9pt !important;
+    line-height: 1.43 !important;
+    color: #222d35 !important;
+    background: #fff !important;
+  }
+  #rolefit-print-host .static-header { height: 17mm !important; }
+  #rolefit-print-host .static-header img { width: 31mm !important; max-height: 13mm !important; }
+  #rolefit-print-host .static-green-rule { margin-bottom: 6mm !important; }
+  #rolefit-print-host .studio-static h1 { font-size: 17pt !important; }
+  #rolefit-print-host .studio-static .static-designation { margin-bottom: 6mm !important; }
+  #rolefit-print-host .studio-static section { margin-bottom: 5mm !important; }
+  #rolefit-print-host .studio-static section h2 { font-size: 9.7pt !important;
+    margin-bottom: 2.2mm !important; padding-bottom: 1.4mm !important; }
+  #rolefit-print-host .studio-static section > p { line-height: 1.48 !important; }
+
+  /* Six (or fewer) short rows, not a tall cell-per-skill table. */
+  #rolefit-print-host .static-tech-box {
+    display: block !important;
+    width: 78% !important;
+    border: 1px solid #d9dfe1 !important;
+    border-radius: 0 !important;
+    padding: 2mm 3mm !important;
+    background: #fff !important;
+  }
+  #rolefit-print-host .static-tech-categories {
+    display: block !important;
+  }
+  #rolefit-print-host .static-tech-category {
+    display: grid !important;
+    grid-template-columns: 27% minmax(0, 1fr) !important;
+    gap: 3mm !important;
+    padding: 1.05mm 0 !important;
+    border-bottom: 1px solid #eef0f1 !important;
+    font-size: 8.1pt !important;
+    line-height: 1.38 !important;
+    break-inside: avoid !important;
+  }
+  #rolefit-print-host .static-tech-category:last-child { border-bottom: 0 !important; }
+  #rolefit-print-host .static-tech-category strong { color: #253b30 !important;
+    font-weight: 700 !important; }
+  #rolefit-print-host .static-tech-category span { overflow-wrap: anywhere !important; }
+
+  #rolefit-print-host .static-project {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 3.5mm !important;
+    padding-bottom: 2.7mm !important;
+  }
+  #rolefit-print-host .static-project p { font-size: 8.8pt !important;
+    line-height: 1.45 !important; margin-bottom: 1.2mm !important; }
+  #rolefit-print-host .static-techused { padding: 1.2mm 2mm !important; }
+  #rolefit-print-host .static-footer { position: static !important;
+    margin-top: 5mm !important; padding-top: 2mm !important; }
+  /* Keep the company label; remove only the unwanted printed footer text. */
+  #rolefit-print-host .static-footer span:last-child { display: none !important; }
+}
+
+
+/* Screen-only alignment for inline-editable project cards.
+   Scope strictly to the studio editor: do not change PDF/print documents. */
+@media screen {
+  .studio-edit-sheet .studio-project {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 5px;
+    margin: 0;
+    padding: 14px 0 16px;
+    background: #fff;
+    border: 0;
+    border-bottom: 1px solid #e0e7e3;
+    border-radius: 0;
+    min-width: 0;
+  }
+
+  .studio-edit-sheet .studio-project + .studio-project {
+    margin-top: 3px;
+  }
+
+  .studio-edit-sheet .studio-project .studio-project-top {
+    margin: 0 0 2px;
+    padding: 0;
+    min-height: 22px;
+    align-items: center;
+  }
+
+  .studio-edit-sheet .studio-project .studio-project-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 72px;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .studio-edit-sheet .studio-project .studio-project-head input:first-child {
+    min-width: 0;
+    width: 100%;
+    font-weight: 750;
+    font-size: 14px;
+  }
+
+  .studio-edit-sheet .studio-project .studio-project-head input:last-child {
+    width: 72px;
+    min-width: 0;
+    text-align: right;
+  }
+
+  /* All editable text starts at the same horizontal guideline. */
+  .studio-edit-sheet .studio-project input,
+  .studio-edit-sheet .studio-project textarea {
+    box-sizing: border-box;
+    padding: 4px 0;
+    border-radius: 3px;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .studio-edit-sheet .studio-project > label {
+    display: block;
+    padding: 0;
+    margin: 5px 0 0;
+    line-height: 1.4;
+    font-size: 10px;
+    text-align: left;
+  }
+
+  /* Grow to fit shorter/longer descriptions in modern Edge/Chrome,
+     avoiding a large empty textarea below short projects. */
+  .studio-edit-sheet .studio-project > textarea {
+    width: 100%;
+    min-height: 46px;
+    height: auto;
+    field-sizing: content;
+    line-height: 1.55;
+    resize: vertical;
+    overflow-wrap: anywhere;
+  }
+
+  .studio-edit-sheet .studio-project > input {
+    width: 100%;
+    line-height: 1.55;
+  }
+
+  .studio-edit-sheet .studio-project input:focus,
+  .studio-edit-sheet .studio-project textarea:focus {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  @media (max-width: 630px) {
+    .studio-edit-sheet .studio-project .studio-project-head {
+      grid-template-columns: minmax(0, 1fr) 58px;
+      gap: 6px;
+    }
+    .studio-edit-sheet .studio-project .studio-project-head input:last-child {
+      width: 58px;
+    }
+  }
+}

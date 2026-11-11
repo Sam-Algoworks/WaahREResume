@@ -1,0 +1,308 @@
+/* Waah रे Resume — Liquid Glass visual layer, v1.
+ * Inspired by the user's video: floating frosted surfaces, light ripples,
+ * bevelled rims and subtle motion. Intentionally SCREEN ONLY.
+ * The Algoworks A4 document and all print styles remain untouched.
+ * Import LAST, after WaahNext.css / ReviewFlow.css.
+ */
+@media screen {
+  :root {
+    color-scheme: light;
+    --lg-ink: #26272b;
+    --lg-muted: #626066;
+    --lg-stroke: rgba(255, 255, 255, .72);
+    --lg-glass: rgba(255, 255, 255, .28);
+    --lg-shadow: 0 20px 55px rgba(50, 36, 32, .16), 0 2px 9px rgba(46, 29, 23, .07);
+    --lg-highlight: rgba(255,255,255,.86);
+  }
+
+  html, body, #root {background:#d6cac0 !important;color:var(--lg-ink)}
+  body {overflow-x:hidden;}
+
+  .waah-shell.app-shell {
+    min-height:100vh; color:var(--lg-ink);
+    background:
+      radial-gradient(ellipse 49% 28% at 83% 8%, rgba(252,245,237,.85),transparent 88%),
+      radial-gradient(ellipse 58% 54% at 7% 86%, rgba(158,135,118,.34),transparent 90%),
+      linear-gradient(139deg,#d4c3b5 0%,#eee8e0 27%,#c7b8ac 53%,#e9ddd2 77%,#cfc2b8 100%) !important;
+    isolation:isolate;
+  }
+  .waah-shell.app-shell::before {
+    content:"";pointer-events:none;position:fixed;inset:-18% -14%;z-index:-1;
+    background:
+      radial-gradient(ellipse 32% 37% at 76% 28%, rgba(255,255,255,.63), transparent 88%),
+      radial-gradient(ellipse 34% 33% at 23% 68%, rgba(154,133,121,.18), transparent 88%),
+      linear-gradient(123deg,transparent 13%,rgba(255,255,255,.13) 27%,transparent 49%);
+    filter:blur(38px);animation:lg-slow-light 20s ease-in-out infinite alternate;
+  }
+  .waah-shell.app-shell::after {
+    content:"";pointer-events:none;position:fixed;inset:0;z-index:-1;opacity:.22;
+    background:repeating-linear-gradient(100deg,rgba(255,255,255,.07) 0,rgba(255,255,255,.07) 1px,transparent 1px,transparent 30px);
+    mask-image:linear-gradient(to bottom,black,transparent 70%);
+  }
+  .waah-shell .ambient {display:none !important}
+  .waah-shell .content {color:var(--lg-ink);max-width:1650px;padding-top:31px;animation:lg-slide-into-view .55s cubic-bezier(.22,1,.36,1) both}
+
+  /* FLOATING GLASS NAVIGATION — transparent bevel + moving specular light. */
+  .waah-shell .waah-header {
+    position:sticky;top:11px;z-index:100;padding:8px clamp(14px,3.3vw,60px) 4px !important;
+    background:transparent !important;border:0 !important;box-shadow:none !important;
+    backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
+  }
+  .waah-shell .waah-header-inner {
+    position:relative;max-width:1580px;min-height:78px;margin:auto;padding:10px 22px;
+    background:linear-gradient(155deg,rgba(255,255,255,.56),rgba(252,245,237,.14) 53%,rgba(255,255,255,.32)) padding-box,
+      linear-gradient(135deg,rgba(255,255,255,.94),rgba(255,255,255,.2) 33%,rgba(255,255,255,.85) 72%,rgba(90,80,72,.14)) border-box !important;
+    border:1px solid transparent !important;border-radius:27px !important;
+    box-shadow:0 18px 45px rgba(46,34,29,.15),0 2px 5px rgba(75,57,51,.07),inset 0 2px 0 rgba(255,255,255,.75),inset 1px 0 0 rgba(255,255,255,.55),inset 0 -1px 1px rgba(103,84,78,.10) !important;
+    backdrop-filter:blur(28px) saturate(158%) !important;-webkit-backdrop-filter:blur(28px) saturate(158%) !important;
+    isolation:isolate;overflow:visible;
+  }
+  .waah-shell .waah-header-inner::after {
+    content:"";position:absolute;inset:2px;z-index:-1;pointer-events:none;border-radius:25px;
+    background:radial-gradient(circle 285px at var(--lg-x,50%) var(--lg-y,8%),rgba(255,255,255,.37),transparent 75%);
+    opacity:.85;transition:opacity .25s;
+  }
+  .waah-shell .waah-brand-symbol {
+    color:#333338 !important;background:linear-gradient(145deg,rgba(255,255,255,.8),rgba(255,255,255,.15)) !important;
+    border:1px solid rgba(255,255,255,.9) !important;border-radius:17px;
+    box-shadow:inset 0 1px 1px #fff,0 6px 18px rgba(50,33,29,.12) !important;
+  }
+  .waah-shell .waah-brand-text {color:#22252a !important;font-weight:850}
+  .waah-shell .waah-brand-text em {color:#665b56 !important;-webkit-text-fill-color:#665b56 !important}
+  .waah-shell .waah-brand-text small {color:#68636a !important}
+  .waah-shell .waah-nav {gap:6px}
+  .waah-shell .waah-nav-link {
+    color:#504b4e !important;border-radius:17px !important;border:1px solid transparent !important;
+    background:transparent !important;font-weight:740;
+    transition:transform .35s cubic-bezier(.2,1.6,.3,1),background .28s,box-shadow .28s,color .28s !important;
+  }
+  .waah-shell .waah-nav-link:hover {
+    transform:translateY(-3px) scale(1.025) !important;color:#222327 !important;
+    background:linear-gradient(140deg,rgba(255,255,255,.8),rgba(255,255,255,.24)) !important;
+    border-color:rgba(255,255,255,.82) !important;
+    box-shadow:0 9px 23px rgba(52,39,37,.1),inset 0 1px #fff !important;
+  }
+  .waah-shell .waah-nav-link.active {
+    color:#25242a !important;background:linear-gradient(151deg,rgba(255,255,255,.86),rgba(218,207,198,.55)) !important;
+    border-color:rgba(255,255,255,.92) !important;
+    box-shadow:0 8px 21px rgba(61,42,40,.14),inset 0 2px #fff,inset 0 -2px 5px rgba(120,98,88,.09) !important;
+  }
+  .waah-shell .waah-mobile-menu {background:rgba(255,255,255,.5);border:1px solid #fff8;color:#342e30}
+
+  /* HERO: luminous floating glass rather than a solid-color banner. */
+  .waah-shell .hero.waah-hero {
+    position:relative;isolation:isolate;overflow:hidden;min-height:375px;
+    background:linear-gradient(127deg,rgba(255,255,255,.53),rgba(254,251,249,.09) 55%,rgba(255,255,255,.35)) !important;
+    border:1px solid rgba(255,255,255,.85) !important;border-radius:35px;
+    backdrop-filter:blur(26px) saturate(120%);-webkit-backdrop-filter:blur(26px) saturate(120%);
+    box-shadow:0 22px 65px rgba(66,47,41,.15),inset 0 2px rgba(255,255,255,.85),inset 0 -2px 6px rgba(78,63,55,.055) !important;
+  }
+  .waah-shell .hero.waah-hero::before {
+    background:radial-gradient(circle 275px at 82% 35%,rgba(255,255,255,.58),transparent 90%),linear-gradient(118deg,transparent 50%,rgba(255,255,255,.15));
+    animation:lg-breathe 9s ease-in-out infinite alternate;
+  }
+  .waah-shell .hero h1 {color:#26252a !important;letter-spacing:-3px;text-shadow:none}
+  .waah-shell .hero h1 span {color:#78645b !important;-webkit-text-fill-color:#78645b !important;background:none !important}
+  .waah-shell .hero p {color:#5b5251 !important}
+  .waah-shell .hero-badge,.waah-shell .eyebrow,.waah-shell .step-label {color:#70605c !important}
+  .waah-shell .tiny-dot {background:#a49185 !important}
+  .waah-shell .hero .art-chip,.waah-shell .waah-paper {box-shadow:0 18px 40px rgba(56,42,36,.14),inset 0 1px #fff !important}
+  .waah-shell .waah-paper-back {background:rgba(204,190,178,.48) !important}
+  .waah-shell .waah-paper-front {background:rgba(255,255,255,.77) !important;backdrop-filter:blur(16px)}
+  .waah-shell .waah-paper-score {color:#594d49 !important;background:rgba(255,255,255,.63) !important}
+
+  /* LIQUID GLASS SURFACES — keep the underlying form controls opaque enough to read. */
+  .waah-shell .panel,
+  .waah-shell .stat-card,
+  .waah-shell .waah-library-panel,
+  .waah-shell .waah-review-columns>.panel,
+  .waah-shell .waah-counter,
+  .waah-shell .job-card,
+  .waah-shell .quick-action {
+    position:relative;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.24) 60%,rgba(253,247,239,.48)) !important;
+    color:var(--lg-ink) !important;border:1px solid rgba(255,255,255,.8) !important;
+    border-radius:27px !important;
+    box-shadow:var(--lg-shadow),inset 0 1px 0 rgba(255,255,255,.94),inset 0 -1px 0 rgba(112,94,84,.08) !important;
+    backdrop-filter:blur(25px) saturate(155%);-webkit-backdrop-filter:blur(25px) saturate(155%);
+  }
+  .waah-shell .panel,.waah-shell .stat-card,.waah-shell .job-card,.waah-shell .quick-action {
+    transition:transform .42s cubic-bezier(.22,1,.36,1),box-shadow .42s,border-color .3s !important;
+  }
+  .waah-shell .panel:hover,.waah-shell .stat-card:hover {
+    border-color:#fff !important;
+    box-shadow:0 24px 65px rgba(49,38,35,.19),inset 0 1px rgba(255,255,255,.94) !important;
+  }
+  .waah-shell .stat-card:hover,.waah-shell .job-card:hover,.waah-shell .quick-action:hover {transform:translateY(-5px) !important}
+  .waah-shell .panel h3,.waah-shell .panel-heading h3,.waah-shell .stat-card>strong,
+  .waah-shell .section-heading h2,.waah-shell .page-head h1,
+  .waah-section-title h1,.waah-library-head h2 {color:#29272b !important}
+  .waah-shell .panel p,.waah-shell .panel-heading p,.waah-shell .page-head p,
+  .waah-shell .subtle,.waah-shell .stat-card>span,.waah-shell .small-note,
+  .waah-shell .studio-ai-line,.waah-shell .waah-review-heading p {color:#665f60 !important}
+  .waah-shell .stat-icon,.waah-shell .quick-icon,.waah-shell .job-symbol,
+  .waah-shell .waah-file-icon {background:rgba(255,255,255,.65) !important;color:#625651 !important;border:1px solid rgba(255,255,255,.92)}
+  .waah-shell .mini-score,.waah-shell .page-count,.waah-counter {
+    background:rgba(255,255,255,.44) !important;color:#28292c !important;border-color:#fff9 !important;
+  }
+
+  /* Buttons feel pressed into a reflective glass surface. */
+  .waah-shell .button,
+  .waah-shell .waah-rank-row,
+  .waah-shell .waah-review-tabs button,
+  .waah-detail-drawer .button {
+    transition:transform .28s cubic-bezier(.23,1.5,.34,1),box-shadow .28s,background .28s,border-color .28s !important;
+  }
+  .waah-shell .button.primary,.waah-review-page .button.primary,
+  .waah-detail-drawer .button.primary {
+    color:#202024 !important;
+    background:linear-gradient(150deg,rgba(255,255,255,.91),rgba(233,225,215,.75) 48%,rgba(252,249,245,.85)) !important;
+    border:1px solid rgba(255,255,255,.92) !important;
+    box-shadow:0 10px 25px rgba(63,44,38,.16),inset 0 2px rgba(255,255,255,.94),inset 0 -2px 4px rgba(67,53,49,.08) !important;
+    border-radius:16px !important;
+  }
+  .waah-shell .button.secondary,.waah-review-page .button.secondary,.waah-detail-drawer .button.secondary {
+    background:rgba(255,255,255,.42) !important;color:#353236 !important;
+    border:1px solid rgba(255,255,255,.84) !important;
+    box-shadow:inset 0 1px rgba(255,255,255,.88),0 6px 18px rgba(53,37,32,.08) !important;
+  }
+  .waah-shell .button:hover:not(:disabled),.waah-detail-drawer .button:hover:not(:disabled) {
+    transform:translateY(-3px) scale(1.015) !important;
+    background:rgba(255,255,255,.87) !important;
+    box-shadow:0 14px 35px rgba(54,40,35,.21),inset 0 2px #fff !important;
+  }
+  .waah-shell .button:active:not(:disabled) {transform:scale(.976) !important}
+  .waah-shell .button:focus-visible,.waah-shell .waah-nav-link:focus-visible,
+  .waah-shell .waah-rank-row:focus-visible {outline:3px solid rgba(96,78,73,.56)!important;outline-offset:3px}
+  .waah-shell .button:disabled {opacity:.55}
+
+  /* Form fields must stay legible against the refracting panels. */
+  .waah-shell .panel input:not([type=file]),.waah-shell .panel select,.waah-shell .panel textarea,
+  .waah-shell .studio-controls input:not([type=file]),.waah-shell .studio-controls select,.waah-shell .studio-controls textarea,
+  .waah-shell .waah-search input {
+    background:rgba(255,255,255,.71) !important;border:1px solid rgba(145,130,124,.25) !important;
+    color:#25252a !important;border-radius:14px !important;
+    box-shadow:inset 0 2px 7px rgba(66,51,44,.035) !important;
+  }
+  .waah-shell input::placeholder,.waah-shell textarea::placeholder {color:#827b7b !important}
+  .waah-shell .dropzone,.waah-shell .rf-jd-disclosure,
+  .waah-shell .studio-standalone-note,.waah-shell .studio-view-mode-hint {
+    background:rgba(255,255,255,.38) !important;color:#544c4b !important;
+    border:1px dashed rgba(125,107,97,.37) !important;border-radius:21px;
+    backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);
+  }
+  .waah-shell .dropzone:hover {background:rgba(255,255,255,.70) !important;border-color:rgba(113,98,90,.75) !important}
+  .waah-shell .dropzone strong,.waah-shell .dropzone small,.waah-shell .dropzone span,
+  .waah-shell .required-star {color:#625653 !important}
+  .waah-shell .jd-upload-label,.waah-shell .file-names>div,
+  .waah-shell .waah-rank-score,.waah-shell .waah-rank-order,
+  .waah-shell .waah-review-skill-list span {
+    color:#393237 !important;background:rgba(255,255,255,.62) !important;border:1px solid rgba(255,255,255,.75) !important;
+  }
+  .waah-shell .record-row,.waah-shell .waah-history-row {color:#28272b !important}
+  .waah-shell .record-row:hover,.waah-shell .waah-history-row:hover {
+    background:rgba(255,255,255,.55) !important;border-color:#fff !important;
+  }
+  .waah-shell .waah-rank-row {
+    background:rgba(255,255,255,.44) !important;border:1px solid rgba(255,255,255,.77) !important;
+    box-shadow:0 5px 17px rgba(65,49,43,.08),inset 0 1px #fff !important;
+  }
+  .waah-shell .waah-rank-row:hover {background:rgba(255,255,255,.85) !important;transform:translateY(-3px) !important}
+  .waah-shell .waah-rank-person strong,.waah-shell .waah-review-number,
+  .waah-shell .waah-review-score-summary strong {color:#22252a !important}
+  .waah-shell .waah-review-progress {background:rgba(116,104,100,.15) !important}
+  .waah-shell .waah-review-progress>span {background:linear-gradient(90deg,#91847d,#403a3c) !important}
+  .waah-shell .waah-review-tabs button.active,.waah-shell .studio-switch button.active {
+    color:#282528 !important;background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(223,212,203,.65)) !important;
+    border-color:#fff !important;box-shadow:0 6px 16px rgba(61,42,36,.12),inset 0 1px #fff !important;
+  }
+  .waah-shell .waah-review-heading h1,.waah-shell .waah-review-heading p,
+  .waah-shell .waah-review-footnote {color:#393236 !important}
+  .waah-shell .waah-review-back {
+    background:rgba(255,255,255,.48) !important;border:1px solid #fff !important;color:#3b3438 !important;
+  }
+  .waah-shell .waah-review-matches h3,.waah-shell .waah-review-gaps h3,
+  .waah-shell .waah-review-score-top .eyebrow {color:#413b3d !important}
+  .waah-shell .waah-review-cta {background:linear-gradient(transparent,rgba(245,238,231,.89) 23%) !important}
+
+  /* Sticky Resume Studio glass toolbar; document itself must stay WHITE. */
+  .waah-shell .studio-toolbar {
+    position:sticky;top:106px;z-index:25;
+    background:linear-gradient(139deg,rgba(255,255,255,.67),rgba(225,214,206,.39)) !important;
+    color:#2a292c !important;border:1px solid rgba(255,255,255,.86) !important;
+    border-radius:22px;box-shadow:var(--lg-shadow),inset 0 2px #fff !important;
+    backdrop-filter:blur(26px) saturate(140%);-webkit-backdrop-filter:blur(26px) saturate(140%);
+  }
+  .waah-shell .studio-toolbar>div:first-child {color:#383133 !important}
+  .waah-shell .studio-switch {background:rgba(255,255,255,.4) !important;border-color:rgba(255,255,255,.7)!important}
+  .waah-shell .studio-switch button {color:#625454 !important}
+  .waah-shell .studio-edit-sheet,
+  .waah-shell .static-document,
+  .waah-shell #rolefit-print-host,
+  .waah-shell .waah-review-pdf,
+  .waah-shell .waah-review-text,
+  .waah-shell .rf-original-document {
+    background:#fff !important;color:#212934 !important;
+    box-shadow:0 16px 46px rgba(47,33,27,.16) !important;
+  }
+  .waah-shell .studio-edit-sheet {border-color:#eee6df !important}
+  .waah-shell .studio-edit-sheet :is(input,textarea) {color:#22313b !important}
+  .waah-shell .waah-review-filebar {background:rgba(255,255,255,.64) !important;color:#514548 !important}
+  .waah-shell .waah-review-note {background:rgba(255,255,255,.55) !important;color:#554c4c !important}
+
+  /* History drawer is a fixed glass sheet but with high contrast text. */
+  .waah-dialog-backdrop {background:rgba(47,39,35,.33) !important;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+  .waah-detail-drawer {
+    background:linear-gradient(140deg,rgba(255,255,255,.91),rgba(238,229,222,.90)) !important;
+    color:#2b292c !important;border-left:1px solid #fff8 !important;
+    backdrop-filter:blur(34px) saturate(130%);-webkit-backdrop-filter:blur(34px) saturate(130%);
+    box-shadow:-25px 0 85px rgba(42,31,29,.2) !important;
+  }
+  .waah-detail-drawer :is(h1,h2,h3,strong) {color:#28252a}
+  .waah-detail-drawer :is(p,small) {color:#635e60}
+  .waah-detail-drawer .button.primary {background:rgba(255,255,255,.7)!important;color:#28262a!important}
+
+  /* Floating page and score animations (does not manipulate actual scores). */
+  .waah-shell .panel,.waah-shell .stat-card,.waah-shell .waah-library-panel {
+    animation:lg-panel-rise .65s cubic-bezier(.22,1,.36,1) both !important;
+  }
+  .waah-shell .stat-card:nth-child(2){animation-delay:70ms!important}
+  .waah-shell .stat-card:nth-child(3){animation-delay:130ms!important}
+  .waah-shell .stat-card:nth-child(4){animation-delay:190ms!important}
+  .waah-shell .waah-review-number {animation:lg-score-pop .7s cubic-bezier(.2,1.4,.3,1) both !important}
+
+  @keyframes lg-slow-light {from{transform:translate3d(-2%,-2%,0) scale(1)}to{transform:translate3d(3%,3%,0) scale(1.07)}}
+  @keyframes lg-breathe {from{opacity:.55;transform:scale(.98)}to{opacity:1;transform:scale(1.06)}}
+  @keyframes lg-panel-rise {from{transform:translateY(15px);opacity:.25}to{transform:translateY(0);opacity:1}}
+  @keyframes lg-slide-into-view {from{opacity:.45;transform:translateY(11px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes lg-score-pop {from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+
+  @media (max-width: 980px) {
+    .waah-shell .waah-header {top:0;padding:8px 11px 0 !important}
+    .waah-shell .waah-header-inner {min-height:70px;padding:9px 13px}
+    .waah-shell .waah-nav.waah-nav-open {
+      background:linear-gradient(130deg,rgba(255,255,255,.90),rgba(234,220,211,.81)) !important;
+      border:1px solid white !important;border-radius:21px;box-shadow:var(--lg-shadow) !important;
+      backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)
+    }
+    .waah-shell .waah-nav-link {color:#352e31 !important}
+    .waah-shell .studio-toolbar {top:83px}
+  }
+  @media (max-width: 700px) {
+    .waah-shell .content {padding:19px 13px 55px}
+    .waah-shell .hero.waah-hero {border-radius:23px}
+    .waah-shell .hero h1 {letter-spacing:-2px}
+    .waah-shell .studio-toolbar {top:73px;gap:9px}
+  }
+  @media (prefers-reduced-motion:reduce) {
+    .waah-shell.app-shell::before,.waah-shell .hero.waah-hero::before,
+    .waah-shell .content,.waah-shell .panel,.waah-shell .stat-card,
+    .waah-shell .waah-library-panel,.waah-shell .waah-review-number {
+      animation:none !important;transition:none !important;
+    }
+    .waah-shell .button,.waah-shell .waah-nav-link {transition:none !important}
+  }
+  @supports not ((-webkit-backdrop-filter:blur(10px)) or (backdrop-filter:blur(10px))) {
+    .waah-shell .waah-header-inner,.waah-shell .panel,.waah-shell .stat-card,
+    .waah-shell .waah-library-panel,.waah-shell .studio-toolbar {background:rgba(248,242,235,.96) !important}
+  }
+}

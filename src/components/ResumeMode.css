@@ -1,0 +1,136 @@
+/* RoleFit AI: layout-only distinction between corporate and ATS-friendly views.
+   The candidate's verified facts remain the same until Align to Job is run.
+   The Algoworks logo is deliberately present in both formats. */
+
+@media screen {
+  .resume-parser-page .studio-view-mode-hint {
+    margin: 0 0 12px;
+    padding: 9px 12px;
+    border: 1px solid rgba(166, 154, 234, .27);
+    border-radius: 8px;
+    color: #bdb9d9;
+    background: rgba(124, 102, 224, .08);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  .resume-parser-page .studio-edit-sheet.standard {
+    border-top: 0;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-company-brand {
+    height: 58px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-company-brand img {
+    width: 108px;
+    max-width: 46%;
+    height: auto;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-normal-banner {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 3px;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-normal-banner strong {
+    color: #4f568b;
+    font-size: 11px;
+    letter-spacing: 1.3px;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-normal-banner small {
+    color: #718096;
+    font-size: 10px;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-green-rule {
+    border-top-color: #6b74a6;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-normal-contact {
+    margin: -10px 0 17px;
+    font-size: 11px;
+    color: #64748b;
+    overflow-wrap: anywhere;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-name {
+    font-size: 30px;
+    letter-spacing: -.4px;
+    text-transform: none;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-section > h3,
+  .resume-parser-page .studio-edit-sheet.standard .studio-section-heading {
+    border-bottom-color: #bcc6d8;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-skills > span {
+    border-color: #d9dff1;
+    color: #3c517c;
+    background: #f2f5fc;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-project {
+    border-left: 3px solid #8191b2;
+    padding-left: 12px;
+    margin-bottom: 11px;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-project-top {
+    color: #5e6b91;
+  }
+  .resume-parser-page .studio-edit-sheet.standard .studio-project > label {
+    color: #63718c;
+  }
+  .resume-parser-page .studio-edit-sheet.company .studio-normal-banner {
+    display: none;
+  }
+}
+
+@media print {
+  #rolefit-print-host .studio-static.standard .static-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+  }
+  #rolefit-print-host .studio-static.standard .resume-mode-label {
+    display: block !important;
+    text-align: right !important;
+    font-size: 8.5pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 1pt !important;
+    color: #596488 !important;
+  }
+  #rolefit-print-host .studio-static.standard .static-green-rule {
+    border-top-color: #6b74a6 !important;
+  }
+  #rolefit-print-host .studio-static.standard section h2 {
+    border-bottom-color: #c7cfdd !important;
+  }
+  #rolefit-print-host .studio-static.standard .static-tech-box {
+    width: 100% !important;
+    border: 0 !important;
+    padding: 1mm 0 !important;
+    background: #fff !important;
+  }
+  #rolefit-print-host .studio-static.standard .static-tech-categories {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 6mm !important;
+    row-gap: 1mm !important;
+  }
+  #rolefit-print-host .studio-static.standard .static-tech-category {
+    grid-template-columns: 35% minmax(0, 1fr) !important;
+    border-bottom: 1px solid #e3e7ef !important;
+    gap: 1.5mm !important;
+    padding: 1.2mm 0 !important;
+  }
+  #rolefit-print-host .studio-static.standard .static-project {
+    padding-left: 3mm !important;
+    border-left: 1.5pt solid #c3ccdf !important;
+  }
+  #rolefit-print-host .studio-static.standard .static-techused {
+    background: transparent !important;
+    border-left-color: #7a88aa !important;
+  }
+  #rolefit-print-host .studio-static.company .resume-mode-label {
+    display: none !important;
+  }
+}
