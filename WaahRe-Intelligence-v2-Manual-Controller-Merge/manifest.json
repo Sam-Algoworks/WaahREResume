@@ -1,0 +1,49 @@
+{
+  "description": "V2.1 compatibility release: includes the exact current AnalysesController SHA-256 from the screenshot and preserves archive.RememberAsync in both single and bulk scoring. All other version checks remain strict.",
+  "expected": {
+    "backend/RoleFit.Api/Program.cs": [
+      "ECF4825C06BD88418E3FECA73F86245E04DAC2408BCF27C44B682395B41DB332"
+    ],
+    "backend/RoleFit.Api/Controllers/AnalysesController.cs": [
+      "197914421C407DB4C6345B9665EDCDBA8771BC1E53BE3161B817AD1F8A8961E6",
+      "A9E18914093216ACA5E71DFCCA57E80C534CD7670560B6FC9240D461BCD6AC84"
+    ],
+    "backend/RoleFit.Api/Controllers/ResumesController.cs": [
+      "5B55AD120CBC80864D7273073112106D1B935802F25895174C70BE99D2D23D9F"
+    ],
+    "backend/RoleFit.Api/Models/Contracts.cs": [
+      "178117EC940FA2C0003F2D62AB997D59D46F8EB51D84A61FA013095395065681"
+    ],
+    "backend/RoleFit.Api/Services/AlignmentEngine.cs": [
+      "26B2E8B66419810976D441C80767C356728A6803BCF6D33B669FEE2B015E4324"
+    ],
+    "backend/RoleFit.Api/Services/ResumeProfileParser.cs": [
+      "4EE16695240A2F72610A31B22B2E1DFC91A5FE4220AC7BEBB6846B9F84E51744"
+    ],
+    "backend/RoleFit.Api/Services/GroqProfileService.cs": [
+      "5B66C653E6EB74CB672AC35A67C59E6FF195E2F67616CEAD4264B330DB01B0BB",
+      "AEEA61A7661D4F17E652819E8F2C989192366C4C58817CBBA21EFC3E37D44300"
+    ],
+    "backend/RoleFit.Api/Services/ProjectHeadingEvidence.cs": [
+      "C3E6F74EBDB8B51D5583474D9A49B59C592368C3AFA2856727008071DD033A25"
+    ]
+  },
+  "new": [
+    "backend/RoleFit.Api/Services/ResumeEvidence.cs",
+    "backend/RoleFit.Api/Services/SemanticMatchService.cs"
+  ],
+  "files": [
+    "backend/RoleFit.Api/Program.cs",
+    "backend/RoleFit.Api/Controllers/AnalysesController.cs",
+    "backend/RoleFit.Api/Controllers/ResumesController.cs",
+    "backend/RoleFit.Api/Models/Contracts.cs",
+    "backend/RoleFit.Api/Services/AlignmentEngine.cs",
+    "backend/RoleFit.Api/Services/ResumeProfileParser.cs",
+    "backend/RoleFit.Api/Services/GroqProfileService.cs",
+    "backend/RoleFit.Api/Services/ProjectHeadingEvidence.cs",
+    "backend/RoleFit.Api/Services/ResumeEvidence.cs",
+    "backend/RoleFit.Api/Services/SemanticMatchService.cs"
+  ],
+  "testFolder": "tests/RoleFit.IntelligenceV2Checks",
+  "projectFingerprint": "4EBE07DCF2742B88BB00AEE83F6C7DBFC281B19D60A3B1BF710A8714BDD5739B"
+}

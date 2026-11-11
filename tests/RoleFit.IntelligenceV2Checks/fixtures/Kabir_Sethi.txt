@@ -1,0 +1,29 @@
+KABIR SETHI
+JUNIOR UI/UX DESIGNER | 1 YEAR 2 MONTHS
+Gurugram, India  |  kabir.sethi@example.com  |  portfolio: example.com/kabir-design
+PROFESSIONAL SUMMARY
+Junior UI/UX designer with 1 year 2 months of professional experience designing responsive websites and customer-
+facing mobile flows. Works across discovery, journey mapping, wireframing, Figma prototyping and developer handoff. 
+Has supported usability sessions and improved interfaces through stakeholder feedback and iterative reviews.
+CORE SKILLS
+Design tools: Figma, FigJam, Adobe XD, Miro
+UX methods: User interviews, personas, user journeys, task flows, usability testing, wireframing
+UI & delivery: Auto Layout, components, responsive design, interactive prototypes, developer handoff
+Additional: Accessibility fundamentals, HTML/CSS awareness, Jira, Agile collaboration
+PROFESSIONAL EXPERIENCE
+Junior UI/UX Designer | Northstar Digital Studio (fictional)
+Sep 2025 - Present | Gurugram
+•  Designed responsive page templates and checkout interactions for two small e-commerce clients, collaborating with 
+a PM and frontend developers.
+•  Built Figma component sets and documented interaction states to reduce inconsistent UI treatments across screens.
+•  Observed five moderated usability sessions and summarized navigation and form-completion issues for iteration.
+SELECTED PROJECTS
+E-commerce Checkout Simplification  |  2026
+•  Redesigned cart, delivery and payment screens in Figma; compared two prototypes during moderated task tests.
+•  Recommended clearer validation and progress indicators based on participant feedback.
+Service Booking Portal  |  2025
+•  Mapped booking and rescheduling journeys; designed responsive appointment selection and confirmation screens.
+EDUCATION
+B.Des. (Interaction Design)  |  2021 - 2025 | Example School of Design, Jaipur
+PROFESSIONAL DEVELOPMENT
+Google UX Design Certificate (sample credential)

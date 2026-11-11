@@ -1,0 +1,2 @@
+Role: Full Stack Developer
+We require 4 years of development experience using ASP.NET Core, C#, React, TypeScript, SQL Server and REST API design. Work involves e-commerce APIs, database schema design, testing, Docker deployments, teamwork and implementing reliable web services. Git experience is required and cloud knowledge is preferred.

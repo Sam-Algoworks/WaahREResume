@@ -1,0 +1,26 @@
+AANYA SHARMA
+UI/UX DESIGNER | FRESHER
+New Delhi, India  |  aanya.sharma@example.com  |  portfolio: example.com/aanya-uiux
+PROFESSIONAL SUMMARY
+Entry-level UI/UX designer with a foundation in visual design, responsive layouts and mobile-first interface design. 
+Comfortable translating simple product briefs into user flows, wireframes and interactive prototypes. Seeking an 
+opportunity to contribute to web and mobile experiences while developing stronger research and product thinking 
+skills.
+CORE SKILLS
+Design tools: Figma (basic), Adobe XD, Adobe Illustrator, Canva
+UX fundamentals: Wireframes, user flows, mood boards, low-fidelity prototyping, heuristic review
+UI fundamentals: Typography, color systems, spacing, responsive layouts, mobile UI, component basics
+Additional: Basic HTML/CSS, presentation skills, design documentation
+EXPERIENCE
+Fresher — no full-time professional design experience; academic and personal projects listed below.
+SELECTED PROJECTS
+Campus Events App — Academic Project  |  Jan 2026 - Apr 2026
+•  Designed 12 mobile screens for event discovery, registrations and reminders using Figma.
+•  Created a basic user flow, low-fidelity wireframes and a clickable prototype for classroom evaluation.
+Local Bakery Website — Personal Project  |  Jun 2026 - Aug 2026
+•  Produced desktop and mobile layouts for menu browsing, order enquiry and contact pages.
+•  Developed a small typography and color guide to keep designs consistent across screens.
+EDUCATION
+Bachelor of Design (Communication Design)  |  2022 - 2026 | Example Institute of Design, New Delhi
+COURSEWORK
+Introduction to User Experience Design, Visual Communication, Design Thinking

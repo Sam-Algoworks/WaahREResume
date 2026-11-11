@@ -1,0 +1,7 @@
+Alex Taylor
+Backend Software Developer
+Summary: Developer with 3 years of hands-on professional experience building and testing enterprise software.
+Skills: C#, ASP.NET Core, SQL Server, REST API, Docker, Git and Azure.
+Experience: 3 years in application development. Helped design, develop, integrate, test, deploy and troubleshoot ASP.NET Core business applications.
+Projects: Created service request management project with APIs and SQL Server.
+Education: Bachelor of Technology degree.

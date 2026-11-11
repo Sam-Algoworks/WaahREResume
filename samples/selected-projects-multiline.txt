@@ -1,0 +1,28 @@
+Robin Example
+Senior Software Engineer • Full-Stack Developer
+Profile
+Engineer with 5+ years of experience in Java, React, PostgreSQL and modern API services.
+Experience
+Senior Software Engineer — Example Services | 2023–Present
+• Built production APIs and improved application reliability.
+Selected Projects
+1. Merchant Risk & Fraud Platform — Java, Spring Boot, Kafka, Redis, PostgreSQL, AWS
+• Real-time transaction scoring pipeline with configurable rules and risk audit trails.
+2. Smart Inventory & Order Management — React, TypeScript, Node.js, PostgreSQL, Redis
+• Built inventory reservations, warehouse workflows and order tracking.
+3. Customer Onboarding & KYC Portal — React, Spring Boot, AWS, PostgreSQL
+• Implemented document upload and approval queues with audit logging.
+4. Event-Driven Notification Service — Java, Kafka, Redis, Docker, AWS
+• Centralized notification delivery with retries and throttling.
+5. Real-Time Analytics Dashboard — React, TypeScript, Python, PostgreSQL
+• Created operational dashboards showing live KPIs and exportable reports.
+6. Team Collaboration Workspace — Next.js, Node.js, PostgreSQL
+• Built channels, mentions and file-sharing features.
+7. Subscription & Billing Console — React, Spring Boot, PostgreSQL
+• Developed invoices, subscription management and reconciliation workflows.
+8. Travel Photography Portfolio & Booking App — Next.js, TypeScript, PostgreSQL
+• Built photo galleries and availability management.
+Technical Skills
+Java, React, TypeScript, Python, PostgreSQL, Redis, AWS, Docker, MongoDB, Kafka
+Education
+Bachelor of Technology

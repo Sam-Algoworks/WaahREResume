@@ -1,0 +1,135 @@
+/* Waah रे Resume — Midnight/Lime edition. SCREEN ONLY.
+   Corporate Algoworks A4 export is intentionally unchanged. */
+@media screen {
+  :root { color-scheme: dark; --wn-ink:#eaf1ff; --wn-muted:#a7b4cf; --wn-accent:#c2f47b; --wn-stroke:#35425e; }
+  html { background:#080f22; }
+  body, #root, .waah-shell.app-shell {
+    min-height:100vh; background:#080f22; color:var(--wn-ink);
+  }
+  body { overflow-x:hidden; }
+  .waah-shell {position:relative;isolation:isolate;}
+  .waah-shell::before {content:"";position:fixed;inset:-18vh -10vw;z-index:-1;pointer-events:none;
+    background:radial-gradient(ellipse 35% 32% at 18% 10%,#516dd650,transparent 85%),radial-gradient(ellipse 30% 38% at 93% 64%,#3b5eb04b,transparent 85%),radial-gradient(ellipse 27% 35% at 58% 92%,#324a8b45,transparent 80%);
+    animation:wn-aurora 16s ease-in-out infinite alternate; }
+  .waah-shell .ambient {display:none;}
+  .waah-shell .main-wrap {max-width:none;min-width:0;}
+  .waah-shell .waah-header {position:sticky;top:0;z-index:100;background:rgba(7,13,30,.83);border-bottom:1px solid #fff2;box-shadow:0 14px 36px #050c2240;backdrop-filter:blur(22px);padding:8px 12px;}
+  .waah-shell .waah-header-inner {background:none;border:0;box-shadow:none;border-radius:0;max-width:1700px;margin:auto;min-height:74px;padding:0 clamp(10px,3vw,42px);}
+  .waah-shell .waah-brand-symbol {background:linear-gradient(150deg,#bdf47a,#80bc6b);color:#15232b;border:1px solid #f2ffce99;border-radius:17px;box-shadow:0 10px 27px #b4f65a2a;transition:transform .28s;}
+  .waah-shell .waah-brand:hover .waah-brand-symbol {transform:rotate(-8deg) scale(1.05);}
+  .waah-shell .waah-brand-text {color:#fff;font-weight:880;letter-spacing:-.9px;}
+  .waah-shell .waah-brand-text em {color:#c4f47b;-webkit-text-fill-color:#c4f47b;}
+  .waah-shell .waah-brand-text small {color:#aabbd5;}
+  .waah-shell .waah-nav {gap:4px;}
+  .waah-shell .waah-nav-link {color:#bdc8df;border:1px solid transparent;border-radius:12px;padding:11px 13px;font-size:12px;font-weight:740;background:transparent;transition:color .2s,background .2s,transform .2s;}
+  .waah-shell .waah-nav-link:hover {background:#ffffff12;color:#fff;transform:translateY(-2px);}
+  .waah-shell .waah-nav-link.active {color:#14202b;background:#c2f47b;border-color:#d6fba6;box-shadow:0 4px 20px #b8f16e35;}
+  .waah-shell .waah-mobile-menu {background:#1c2944;border-color:#3d4a6b;color:#fff;}
+  .waah-shell .content {max-width:1630px;width:100%;padding:34px clamp(16px,3vw,52px) 55px;margin:0 auto;animation:wn-enter .42s ease both;}
+  .waah-shell .hero.waah-hero {position:relative;min-height:365px;background:linear-gradient(112deg,#1a2850 0%,#1c3160 52%,#101c3c 100%);border:1px solid #7386b344;border-radius:29px;box-shadow:0 23px 65px #01091d7a;}
+  .waah-shell .hero.waah-hero::before {background:radial-gradient(circle at 87% 25%,#a0ff783b,transparent 37%);}
+  .waah-shell .hero h1 {color:#fbfdff;font-size:clamp(42px,5vw,73px);letter-spacing:-3.6px;}
+  .waah-shell .hero h1 span {color:#c5f778!important;-webkit-text-fill-color:#c5f778!important;background:none;}
+  .waah-shell .hero p {color:#c4cee4;font-size:15px;line-height:1.8;}
+  .waah-shell .hero-badge,.waah-shell .eyebrow,.waah-shell .step-label {color:#bdf57d;letter-spacing:2px;}
+  .waah-shell .tiny-dot {background:#c2f47b;}
+  .waah-shell .waah-paper-front {background:#f7f9ff;}.waah-shell .waah-paper-back {background:#657dca;}
+  .waah-shell .waah-paper-top {color:#273d5b;}.waah-shell .waah-paper-score {background:#e7f7d6;color:#2f4e2a;}
+  .waah-shell .art-chip {background:#f8fbff;color:#253759;}
+  .waah-shell .button {border-radius:12px;font-weight:780;letter-spacing:0;transition:transform .22s ease,box-shadow .22s ease,background .22s ease;}
+  .waah-shell .button.primary, .waah-review-page .button.primary {color:#192736;background:#c0f279;border:1px solid #d0f89d;box-shadow:0 10px 25px #bafa6a2c;}
+  .waah-shell .button.primary:hover:not(:disabled),.waah-review-page .button.primary:hover:not(:disabled) {background:#d4ffa2;color:#13202a;box-shadow:0 14px 33px #bafa6a55;transform:translateY(-2px);}
+  .waah-shell .button.secondary,.waah-review-page .button.secondary {color:#ecf4ff;background:#263655;border:1px solid #52617e;box-shadow:none;}
+  .waah-shell .button.secondary:hover:not(:disabled),.waah-review-page .button.secondary:hover:not(:disabled) {background:#354870;color:#fff;transform:translateY(-2px);}
+  .waah-shell .button:disabled {opacity:.48;cursor:not-allowed;}
+  .waah-shell .section-heading h2,.waah-shell .page-head h1 {color:#f6f8ff;letter-spacing:-1.7px;}
+  .waah-shell .page-head p,.waah-shell .page-head .subtle,.waah-shell .subtle {color:#b6c2db;}
+  .waah-shell .page-count {background:#233755;color:#d7f7a5;border-color:#527660;}
+  .waah-shell .panel,.waah-shell .stat-card {background:#f7f9ff;color:#20304a;border:1px solid #ffffffaa;border-radius:23px;box-shadow:0 17px 49px #020a22b2;}
+  .waah-shell .panel h3,.waah-shell .panel-heading h3 {color:#23314b;}
+  .waah-shell .panel-heading p,.waah-shell .panel p:not(.studio-view-mode-hint),.waah-shell .stat-card>span {color:#687990;}
+  .waah-shell .stat-card>strong {color:#172b44;}
+  .waah-shell .stat-bottom {color:#8996ab;}
+  .waah-shell .stat-icon.purple,.waah-shell .stat-icon.blue,.waah-shell .stat-icon.pink,.waah-shell .stat-icon.green {background:#e3edff;color:#3658a9;}
+  .waah-shell .quick-action,.waah-shell .job-card {background:#f1f5ff;border-color:#dce5f9;color:#213456;}
+  .waah-shell .quick-action:hover,.waah-shell .job-card:hover {background:#e9f0ff;box-shadow:0 7px 25px #27497d20;}
+  .waah-shell .quick-action strong,.waah-shell .job-row strong {color:#25344d;}
+  .waah-shell .quick-icon,.waah-shell .job-symbol {background:#e0e9ff;color:#3e5cb0;}
+  .waah-shell .record-row.rf-record-action {color:#203655;}.waah-shell .record-row.rf-record-action:hover {background:#e9f0ff;}
+  .waah-shell .mini-score {color:#233d65;background:#e3ecff;border-color:#d3def2;}
+  .waah-shell .text-action,.waah-shell .job-actions button {color:#3c5ab3;}
+  .waah-shell .footer {border-top:1px solid #37476a;color:#aeb9d1;}
+  .waah-shell .form-panel label,.waah-shell .upload-panel label:not(.dropzone),.waah-shell .studio-controls label {color:#40536e;}
+  .waah-shell .panel input:not([type=file]),.waah-shell .panel select,.waah-shell .panel textarea,.waah-shell .studio-controls input:not([type=file]),.waah-shell .studio-controls select,.waah-shell .studio-controls textarea {color:#1f3047!important;background:#fff!important;border:1px solid #c9d5e7!important;border-radius:11px;}
+  .waah-shell input::placeholder,.waah-shell textarea::placeholder {color:#8b9ab0;}
+  .waah-shell input:focus,.waah-shell textarea:focus,.waah-shell select:focus {outline:2px solid #95a7ea6e;box-shadow:0 0 0 4px #8ba4dc2b!important;border-color:#738dce!important;}
+  .waah-shell .dropzone {background:#eff5ff;color:#345e9b;border:1.5px dashed #8fa9d3;border-radius:18px;}
+  .waah-shell .dropzone:hover {background:#e2eeff;color:#284f93;}
+  .waah-shell .dropzone strong {color:#274777;}.waah-shell .dropzone span,.waah-shell .dropzone small {color:#6a84ad;}
+  .waah-shell .file-names>div {background:#eaf1ff;color:#3c577f;}
+  .waah-shell .small-note {color:#74849e;}
+  .waah-shell .result-panel {min-height:420px;}
+  .waah-shell .ats-onboarding {display:grid;gap:0;margin-top:8px;}
+  .waah-shell .ats-step {display:flex;gap:17px;align-items:flex-start;padding:21px 6px;border-bottom:1px solid #e2e9f4;}
+  .waah-shell .ats-step:last-child{border-bottom:0;}
+  .waah-shell .ats-step>span {display:grid;place-items:center;flex:none;width:39px;height:39px;border-radius:12px;background:#e6f3c9;color:#355126;font-weight:850;}
+  .waah-shell .ats-step strong {color:#29384d;font-size:14px;}
+  .waah-shell .ats-step p {color:#728399!important;font-size:12px;line-height:1.6;margin:5px 0 0;}
+  .waah-shell .required-star {color:#4057a9;font-weight:750;font-size:10px;margin-left:7px;}
+  .waah-shell .step-label {color:#4762ad;}
+  .waah-shell .jd-upload-label {border-color:#98aee8;background:#eff4ff;color:#3754aa!important;}
+  .waah-shell .rf-jd-disclosure {background:#f6f8fc;}
+  .waah-shell .waah-rank-row {box-shadow:0 2px 12px #334b8011;}
+  .waah-shell .waah-rank-score {background:#e7f1d9;color:#243d36;}
+  .waah-shell .waah-rank-view {color:#405bb3;}
+  .waah-shell .waah-rank-order {background:#e8eefb;color:#3957ae;}
+  .waah-shell .studio-layout {display:grid;grid-template-columns:minmax(278px,.72fr) minmax(0,1.5fr);gap:25px;align-items:start;}
+  .waah-shell .studio-controls {position:sticky;top:106px;max-height:calc(100dvh - 127px);overflow-y:auto;}
+  .waah-shell .studio-controls h3 {color:#23354f;}
+  .waah-shell .studio-standalone-note {color:#415c83;background:#eef3fd;border:1px solid #d9e4f4;border-radius:12px;padding:13px 14px;line-height:1.6;font-size:12px;}
+  .waah-shell .studio-ai-line {color:#4d6288;}
+  .waah-shell .studio-view {min-width:0;}
+  .waah-shell .studio-toolbar {position:sticky;top:98px;z-index:20;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:12px 14px;background:#1b2845ed;border:1px solid #384a70;border-radius:17px;box-shadow:0 12px 28px #040c2090;backdrop-filter:blur(17px);color:#f5f8ff;}
+  .waah-shell .studio-toolbar>div:first-child {color:#eef4ff;}
+  .waah-shell .studio-switch {background:#0d172d;border:1px solid #445477;border-radius:11px;}
+  .waah-shell .studio-switch button {color:#d7dfff;background:transparent;}
+  .waah-shell .studio-switch button.active {color:#192836;background:#c0f279;box-shadow:none;}
+  .waah-shell .studio-floating-actions {display:flex;gap:8px;align-items:center;}
+  .waah-shell .studio-floating-actions .button {font-size:11px;padding:10px 12px;white-space:nowrap;}
+  .waah-shell .studio-view-mode-hint {color:#c9d5e9;background:#192943;border:1px solid #33476a;border-radius:12px;padding:10px 14px;font-size:12px;}
+  .waah-shell .studio-edit-sheet {width:min(100%,795px);margin:12px auto 0;max-height:min(86dvh,1120px);min-height:650px;overflow:auto;scrollbar-width:thin;overscroll-behavior:contain;background:#fff;color:#24334b;border:1px solid #e0e8f2;border-radius:9px;padding:42px clamp(24px,4vw,54px);box-shadow:0 16px 60px #020717aa;}
+  .waah-shell .studio-company-brand {margin:0 0 28px;}
+  .waah-shell .studio-name,.waah-shell .studio-designation-row input {color:#1c2b3d!important;}
+  .waah-shell .studio-info {color:#b8c7e0!important;background:#1b2844;border:1px solid #364b6a;border-radius:12px;padding:13px 16px;}
+  .waah-shell .studio-internal {background:#f5f7fb;border-color:#d9e3f2;}
+  .waah-shell .rf-original-document {border-color:#506082;background:#1b2845;}
+  .waah-shell .rf-original-bar {background:#243858;}
+  .waah-shell .rf-original-bar strong {color:#fff;}
+  .waah-shell .rf-original-pdf {background:#fff;}
+  .waah-shell .profile-empty {color:#d6e1f2;background:#1c2a49;border:1px dashed #56658a;min-height:360px;}
+  .waah-shell .profile-empty h3 {color:#fff;}
+  .waah-shell .waah-review-page {color:#f2f5ff;}
+  .waah-shell .waah-review-heading h1 {color:#fff;}
+  .waah-shell .waah-review-heading p,.waah-shell .waah-review-footnote {color:#b4c4dd;}
+  .waah-shell .waah-review-columns>.panel {background:#fafdff;border:1px solid #e4eafb;box-shadow:0 14px 32px #0309239c;}
+  .waah-shell .waah-review-tabs button.active {background:#263f81;border-color:#263f81;color:#fff;}
+  .waah-shell .waah-review-filebar,.waah-shell .waah-review-skill-list span {background:#eef2fe;color:#2d467f;}
+  .waah-shell .waah-review-number {color:#233a72;}
+  .waah-shell .waah-review-score-summary strong,.waah-shell .waah-review-matches h3,.waah-shell .waah-review-gaps h3 {color:#283e60;}
+  .waah-shell .waah-review-progress {background:#e0e9f7;}
+  .waah-shell .waah-review-progress>span {background:#91cb51;}
+  .waah-shell .waah-review-cta {background:linear-gradient(transparent,#fff 22%);}
+  .waah-shell .waah-review-align-error {color:#8a2d2d;background:#fbeaea;padding:10px;border-radius:8px;}
+  .waah-shell .waah-review-action-grid {display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+  .waah-shell .waah-review-action-grid .button {width:100%;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;}
+  .waah-shell .waah-review-action-grid .button.secondary {background:#eaf0fa;color:#253f77;border-color:#cbd9ef;}
+  .waah-shell .waah-review-back {background:#192847;border-color:#3d557e;color:#d4f38f;}
+  .waah-shell .waah-review-download {color:#3b5ba0;}
+  .waah-shell .waah-history-row {transition:transform .2s,background .2s;}
+  .waah-shell .waah-history-row:hover {transform:translateX(3px);}
+  @keyframes wn-aurora {from{transform:translate(-3%,-2%) scale(1)}to{transform:translate(3%,3%) scale(1.08)}}
+  @keyframes wn-enter {from{opacity:.5;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:1120px){.waah-shell .waah-header-inner{padding:0 8px}.waah-shell .waah-nav-link{padding:10px 9px;gap:4px}.waah-shell .studio-layout{grid-template-columns:1fr}.waah-shell .studio-controls{position:static;max-height:none}.waah-shell .studio-toolbar{top:90px}}
+  @media(max-width:780px){.waah-shell .waah-header-inner{min-height:60px}.waah-shell .waah-nav{background:#111c36;border-color:#506088}.waah-shell .waah-nav-link{color:#d1dbed}.waah-shell .waah-brand-text{font-size:17px}.waah-shell .content{padding:20px 13px}.waah-shell .hero-copy{padding:34px 25px}.waah-shell .hero h1{font-size:45px}.waah-shell .studio-toolbar{position:static}.waah-shell .studio-floating-actions{width:100%;justify-content:stretch}.waah-shell .studio-floating-actions .button{flex:1}.waah-shell .waah-review-action-grid{grid-template-columns:1fr}.waah-shell .studio-edit-sheet{max-height:78dvh;padding:22px 19px}}
+  @media(prefers-reduced-motion:reduce){.waah-shell::before{animation:none}.waah-shell .button,.waah-shell .waah-nav-link,.waah-shell .waah-history-row{transition:none!important}.waah-shell .content{animation:none!important}}
+}

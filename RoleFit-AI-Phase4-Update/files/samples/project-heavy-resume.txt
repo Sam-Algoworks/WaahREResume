@@ -1,0 +1,27 @@
+Maya Rao
+Full Stack Developer
+Experience: 4.45 years
+maya.rao@example.com
+
+Professional Summary
+Full Stack Developer with hands-on experience building reliable web applications using C#, ASP.NET Core, React, TypeScript, SQL Server, HTML and CSS. Has worked on API integrations, database design, testing, CI/CD, and Docker-based deployment. Participated in web and analytics projects and maintained project documentation.
+
+Technical Skills
+C#, ASP.NET Core, React, TypeScript, JavaScript, SQL Server, Docker, Git, HTML, CSS, Python, REST API, Power BI
+
+Projects
+1. Amazon Shopping Website (2026): Built e-commerce product catalog, checkout interface, and order APIs using ASP.NET Core, SQL Server, React and TypeScript. Responsibilities: Developed APIs and integrated checkout workflows.
+2. Smart Farming Dashboard (2025): Monitored soil moisture and crop conditions with IoT sensors. Used Python and Power BI. Responsibilities: Created data views.
+3. Hospital Appointments (2025): Managed doctor availability with ASP.NET Core and SQL Server. Responsibilities: Built scheduling APIs.
+4. University Learning Portal (2024): Created course content and online testing tools with React and SQL Server.
+5. Financial Transactions (2024): Built secure transaction reporting API in C#.
+6. Customer Service Portal (2024): Built internal customer ticketing tools in ASP.NET Core.
+7. Logistics Routing System (2023): Created route and delivery monitoring dashboards with React.
+8. Hotel Booking Website (2023): Built reservation pages with JavaScript and SQL Server.
+9. Employee Leave Management (2023): Built leave approval workflows using C# and SQL Server.
+10. Video Transcript Summarizer (2022): Built a Python-based transcript summarization tool.
+11. Portfolio Website (2022): Built a personal portfolio website using HTML, CSS and JavaScript.
+12. Weather Forecast Dashboard (2022): Built a React dashboard using weather data APIs.
+
+Education
+B.Tech Computer Science, 2022

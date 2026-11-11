@@ -1,0 +1,7 @@
+Jordan Smith
+Frontend Software Engineer
+Summary: Developer with 2 years of experience building user interfaces and improving website experiences.
+Skills: JavaScript, TypeScript, React, HTML, CSS, Git, Figma, UI/UX.
+Experience: 2 years designing and testing frontend web applications.
+Projects: Designed responsive e-commerce website interfaces and reusable React components.
+Education: Bachelor's degree in computer applications.

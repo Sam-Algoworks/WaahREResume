@@ -1,0 +1,7 @@
+frontend/rolefit-ui/src/App.tsx
+frontend/rolefit-ui/src/components/CandidateReview.tsx
+frontend/rolefit-ui/src/components/ResumeParserPage.tsx
+frontend/rolefit-ui/src/main.tsx
+frontend/rolefit-ui/src/WaahNext.css
+frontend/rolefit-ui/src/WaahPrintIsolation.css
+backend/RoleFit.Api/Controllers/ResumesController.cs

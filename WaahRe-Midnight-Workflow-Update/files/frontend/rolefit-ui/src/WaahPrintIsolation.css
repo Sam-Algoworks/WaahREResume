@@ -1,0 +1,16 @@
+/* The printable A4 document lives in a portal directly under body.
+   Never render this hidden print duplicate on the interactive website. */
+@media screen {
+  html body > #rolefit-print-host { display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important; }
+}
+@media print {
+  @page { size:A4 portrait; margin:13mm 16mm 14mm; }
+  html,body { height:auto!important;min-height:0!important;overflow:visible!important;margin:0!important;padding:0!important;background:white!important; }
+  html body > #root {display:none!important;}
+  html body > #rolefit-print-host {display:block!important;visibility:visible!important;position:static!important;overflow:visible!important;height:auto!important;width:auto!important;margin:0!important;padding:0!important;background:white!important;}
+  html body > #rolefit-print-host * {visibility:visible!important;}
+  #rolefit-print-host .studio-static {display:block!important;min-height:0!important;position:static!important;transform:none!important;box-shadow:none!important;break-before:auto!important;color:#263236!important;background:white!important;}
+  #rolefit-print-host .static-project {break-inside:avoid!important;page-break-inside:avoid!important;}
+  #rolefit-print-host .static-tech-category {break-inside:avoid!important;}
+  #rolefit-print-host .static-footer {display:none!important;}
+}

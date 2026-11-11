@@ -1,0 +1,25 @@
+RIYA MEHRA
+UI/UX Designer  |  Noida, Uttar Pradesh  |  riya.mehra@example.com  |  portfolio.example.com
+PROFESSIONAL SUMMARY
+UI/UX Designer with 2 years 4 months of experience designing intuitive web and mobile experiences for SaaS, e-commerce, and service platforms. Skilled in user research, journey mapping, wireframing, interactive prototyping, Figma design systems, and usability testing. Collaborates closely with product managers and engineers to translate user needs into accessible, responsive interfaces and measurable product improvements.
+PROFESSIONAL EXPERIENCE
+UI/UX Designer - BrightPath Digital Studio  |  July 2024 - Present | Noida, India
+Designed end-to-end flows and high-fidelity screens for 5 web and mobile initiatives, from discovery and wireframes through developer handoff.
+Conducted 12 user/stakeholder interviews and 8 moderated usability sessions to identify friction points and validate design choices.
+Redesigned SaaS onboarding and simplified navigation; usability tests showed a 22% reduction in time to complete the first core task.
+Built and maintained 60+ reusable Figma components with Auto Layout, variants, and documented interaction states.
+Worked with React frontend developers to review responsive behavior, handoff specifications, and WCAG-aware color contrast.
+SELECTED PROJECTS
+E-commerce Checkout Redesign  |  2026 | Responsive web application
+Mapped checkout drop-off points, tested alternative cart and payment flows, and delivered clickable Figma prototypes. A/B testing in the sample scenario indicated a 14% improvement in checkout completion.
+SaaS Analytics Dashboard  |  2025 | B2B product
+Created information architecture, task flows, reusable data-visualization components, empty/error states, and desktop-to-tablet responsive layouts for operational dashboards.
+Clinic Appointment Booking App  |  2024 | Mobile application
+Designed appointment discovery, scheduling, confirmation, and rescheduling journeys; validated low-fidelity and high-fidelity prototypes with five test users.
+CORE SKILLS
+UX: User research, personas, journey maps, information architecture, user flows, wireframing, interaction design, usability testing, accessibility (WCAG basics)
+UI: Visual design, responsive web/mobile design, typography, design systems, components, prototyping, developer handoff
+Tools: Figma, FigJam, Adobe XD, Adobe Illustrator, Adobe Photoshop, Miro, Maze; HTML/CSS fundamentals
+EDUCATION
+Bachelor of Design (Interaction Design)  |  2020 - 2024
+Sample Institute of Design, India

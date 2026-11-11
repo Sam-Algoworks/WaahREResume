@@ -1,0 +1,124 @@
+using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
+using RoleFit.Api.Models;
+
+namespace RoleFit.Api.Services;
+
+// Preserves the controller-facing Store contracts while moving searchable metadata into SQL Server.
+// SQL mode is intended for one local app instance; it is not a multi-user public access solution.
+public sealed class SqlHistoryRepository(IDbContextFactory<HistoryDbContext> factory, IWebHostEnvironment environment)
+{
+    private readonly JsonSerializerOptions _json = new(JsonSerializerDefaults.Web);
+    private readonly SemaphoreSlim _writeGate = new(1, 1);
+
+    public async Task InitializeAsync(CancellationToken ct)
+    {
+        await using var db = await factory.CreateDbContextAsync(ct);
+        await db.Database.EnsureCreatedAsync(ct);
+        var dataFolder = Path.Combine(environment.ContentRootPath, "App_Data");
+        Directory.CreateDirectory(dataFolder);
+
+        // Import from old JSON only when the corresponding SQL table is still empty.
+        var local = await ReadJsonFileAsync<StoredData>(Path.Combine(dataFolder, "rolefit-local.json"), ct);
+        if (local is not null)
+        {
+            if (!await db.Jobs.AnyAsync(ct)) db.Jobs.AddRange(local.Jobs.DistinctBy(x => x.Id).Select(ToJob));
+            if (!await db.Analyses.AnyAsync(ct)) db.Analyses.AddRange(local.Analyses.DistinctBy(x => x.Id).Select(ToAnalysis));
+        }
+        var drafts = await ReadJsonFileAsync<List<ResumeProfile>>(Path.Combine(dataFolder, "profile-drafts.json"), ct);
+        if (drafts is not null && !await db.Drafts.AnyAsync(ct))
+            db.Drafts.AddRange(drafts.DistinctBy(x => x.Id).Select(ToDraft));
+        var archives = await ReadJsonFileAsync<List<ResumeArchiveEntry>>(Path.Combine(dataFolder, "resume-archive.json"), ct);
+        if (archives is not null && !await db.Archives.AnyAsync(ct))
+            db.Archives.AddRange(archives.Where(x => !string.IsNullOrWhiteSpace(x.Sha256))
+                .DistinctBy(x => x.Sha256).DistinctBy(x => x.Id).Select(ToArchive));
+        await db.SaveChangesAsync(ct);
+    }
+
+    private async Task<T?> ReadJsonFileAsync<T>(string file, CancellationToken ct)
+    {
+        if (!File.Exists(file)) return default;
+        // Original JSON files are deliberately retained as a rollback backup.
+        await using var stream = File.OpenRead(file);
+        return await JsonSerializer.DeserializeAsync<T>(stream, _json, ct);
+    }
+    private string Json<T>(T record) => JsonSerializer.Serialize(record, _json);
+    private T Parse<T>(string payload) => JsonSerializer.Deserialize<T>(payload, _json)
+        ?? throw new InvalidDataException("Invalid history record in SQL Server.");
+    private HistoryJobRow ToJob(JobRecord x) => new() { Id = x.Id, Payload = Json(x) };
+    private HistoryAnalysisRow ToAnalysis(AnalysisRecord x) => new() { Id = x.Id, CreatedAt = x.CreatedAt, Payload = Json(x) };
+    private HistoryDraftRow ToDraft(ResumeProfile x) => new() { Id = x.Id, UpdatedAt = x.UpdatedAt, Payload = Json(x) };
+    private HistoryArchiveRow ToArchive(ResumeArchiveEntry x) => new() { Id = x.Id, Sha256 = x.Sha256, Payload = Json(x) };
+
+    public async Task<StoredData> ReadLocalAsync(CancellationToken ct)
+    {
+        await using var db = await factory.CreateDbContextAsync(ct);
+        return new StoredData
+        {
+            Jobs = (await db.Jobs.AsNoTracking().ToListAsync(ct)).Select(x => Parse<JobRecord>(x.Payload)).ToList(),
+            Analyses = (await db.Analyses.AsNoTracking().ToListAsync(ct)).Select(x => Parse<AnalysisRecord>(x.Payload)).ToList()
+        };
+    }
+    public async Task<T> UpdateLocalAsync<T>(Func<StoredData, T> update, CancellationToken ct)
+    {
+        await _writeGate.WaitAsync(ct);
+        try
+        {
+            await using var db = await factory.CreateDbContextAsync(ct);
+            await using var tx = await db.Database.BeginTransactionAsync(ct);
+            var local = new StoredData
+            {
+                Jobs = (await db.Jobs.ToListAsync(ct)).Select(x => Parse<JobRecord>(x.Payload)).ToList(),
+                Analyses = (await db.Analyses.ToListAsync(ct)).Select(x => Parse<AnalysisRecord>(x.Payload)).ToList()
+            };
+            var result = update(local);
+            db.Jobs.RemoveRange(await db.Jobs.ToListAsync(ct));
+            db.Analyses.RemoveRange(await db.Analyses.ToListAsync(ct));
+            await db.SaveChangesAsync(ct); // clear before adding rows with the same IDs
+            db.Jobs.AddRange(local.Jobs.Select(ToJob));
+            db.Analyses.AddRange(local.Analyses.Select(ToAnalysis));
+            await db.SaveChangesAsync(ct);
+            await tx.CommitAsync(ct);
+            return result;
+        }
+        finally { _writeGate.Release(); }
+    }
+    public async Task<List<ResumeProfile>> ReadDraftsAsync(CancellationToken ct)
+    {
+        await using var db = await factory.CreateDbContextAsync(ct);
+        return (await db.Drafts.AsNoTracking().ToListAsync(ct)).Select(x => Parse<ResumeProfile>(x.Payload)).ToList();
+    }
+    public async Task UpsertDraftAsync(ResumeProfile profile, CancellationToken ct)
+    {
+        await _writeGate.WaitAsync(ct);
+        try
+        {
+            await using var db = await factory.CreateDbContextAsync(ct);
+            var row = await db.Drafts.FirstOrDefaultAsync(x => x.Id == profile.Id, ct);
+            if (row is null) db.Drafts.Add(ToDraft(profile));
+            else { row.Payload = Json(profile); row.UpdatedAt = profile.UpdatedAt; }
+            await db.SaveChangesAsync(ct);
+        }
+        finally { _writeGate.Release(); }
+    }
+    public async Task<List<ResumeArchiveEntry>> ReadArchivesAsync(CancellationToken ct)
+    {
+        await using var db = await factory.CreateDbContextAsync(ct);
+        return (await db.Archives.AsNoTracking().ToListAsync(ct)).Select(x => Parse<ResumeArchiveEntry>(x.Payload)).ToList();
+    }
+    public async Task SaveArchivesAsync(List<ResumeArchiveEntry> entries, CancellationToken ct)
+    {
+        await _writeGate.WaitAsync(ct);
+        try
+        {
+            await using var db = await factory.CreateDbContextAsync(ct);
+            await using var tx = await db.Database.BeginTransactionAsync(ct);
+            db.Archives.RemoveRange(await db.Archives.ToListAsync(ct));
+            await db.SaveChangesAsync(ct);
+            db.Archives.AddRange(entries.Select(ToArchive));
+            await db.SaveChangesAsync(ct);
+            await tx.CommitAsync(ct);
+        }
+        finally { _writeGate.Release(); }
+    }
+}

@@ -1,0 +1,2 @@
+Backend Developer
+We are seeking a Backend Developer with 3 years of experience in C#, ASP.NET Core, SQL Server, REST API, Docker and Git. Responsibilities include design, develop, integrate, test, deploy and troubleshoot business applications. A bachelor's degree is preferred. Experience with database-backed projects is a plus.

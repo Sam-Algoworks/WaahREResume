@@ -1,0 +1,36 @@
+NEHA RAO
+UI/UX & PRODUCT DESIGNER | 2 YEARS 8 MONTHS
+Noida, India  |  neha.rao@example.com  |  portfolio: example.com/neha-productdesign
+PROFESSIONAL SUMMARY
+Product-focused UI/UX designer with 2 years 8 months of professional experience across SaaS dashboards and mobile 
+platforms. Skilled in translating research findings and complex workflows into accessible, scalable interface systems. 
+Experienced in end-to-end design, Figma design systems, usability validation, analytics-informed iteration and cross-
+functional delivery with product and engineering teams.
+CORE SKILLS
+Design tools: Figma (advanced), FigJam, Miro, Adobe Creative Cloud
+UX & product: Discovery interviews, journey mapping, information architecture, usability testing, A/B test planning
+Systems & delivery: Design tokens, variants, Auto Layout, reusable components, WCAG 2.2 principles, design QA
+Collaboration & data: Product analytics interpretation, Jira, design specs, Agile, HTML/CSS fundamentals
+PROFESSIONAL EXPERIENCE
+UI/UX Designer | Meridian Product Labs (fictional)
+Apr 2025 - Present | Noida
+•  Owned experience design for a multi-role SaaS analytics dashboard, from discovery workshops to release QA.
+•  Consolidated 35+ interface patterns into a shared Figma library and documented interaction and accessibility 
+standards.
+•  Partnered with engineers to simplify dense filters and tables; reviewed usability findings and post-release usage 
+signals.
+Associate UI Designer | Meridian Product Labs (fictional)
+Mar 2024 - Mar 2025 | Noida
+•  Created responsive web and mobile screens for onboarding and account management flows.
+•  Prepared high-fidelity prototypes, annotated states and handoff specifications for sprint delivery.
+SELECTED PROJECTS
+B2B Analytics Workspace  |  2025 - 2026
+•  Reworked dashboard navigation, role-based permissions and complex filter flows using information architecture 
+maps.
+•  Ran prototype walkthroughs with internal users and revised hierarchy and empty states before implementation.
+Patient Appointment Management App  |  2024 - 2025
+•  Designed appointment discovery, booking and rescheduling experiences with accessible form patterns.
+EDUCATION
+B.Tech. (Computer Science)  |  2020 - 2024 | Example Institute of Technology, Lucknow
+RELEVANT STRENGTHS
+Enterprise SaaS UX, design systems, accessibility, stakeholder facilitation

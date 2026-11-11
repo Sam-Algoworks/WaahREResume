@@ -1,0 +1,13 @@
+/* JD skills awaiting verification – website editor only. Never included in printed profile. */
+.jd-skills-review { border: 1px solid rgba(105,119,144,.24); border-radius: 16px; padding: 20px; background: #f8fafc; margin-top: 22px; }
+.jd-skills-review .studio-section-heading h3 { color: #172c3c; }
+.jd-skills-explainer { color: #475569; font-size: 13px; line-height: 1.6; margin: 10px 0 16px; }
+.jd-skills-list { display: grid; gap: 8px; }
+.jd-skill-item { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border: 1px solid #dbe4ec; background: white; border-radius: 10px; padding: 10px 12px; color: #1d2939; }
+.jd-skill-item > span { font-weight: 600; overflow-wrap: anywhere; }
+.jd-skill-actions { display: flex; align-items: center; gap: 7px; }
+.jd-skill-actions button { cursor: pointer; border-radius: 8px; border: 1px solid #acbac7; background: #f6faf9; color: #124c40; padding: 8px 10px; font-size: 12px; font-weight: 700; }
+.jd-skill-actions button:hover { background: #e0f4ed; }
+.jd-skill-actions .jd-skill-dismiss { color: #526579; background: white; }
+@media (max-width:680px) { .jd-skill-item { align-items: stretch; flex-direction: column; } .jd-skill-actions { flex-wrap: wrap; } }
+@media print { .jd-skills-review { display: none !important; } }
